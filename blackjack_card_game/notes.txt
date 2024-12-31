@@ -1,0 +1,128 @@
+2 players: player and dealer
+
+Rules:
+- End round with higher hand than dealer without going over 21
+- Face cards = 10
+- Ace = 1 or 11
+- Over 21: bet is lost, called a bust
+- If player is dealt a 21, that is a natural or a blackjack
+    - Dealer pays the player one and a half times the original bet and get their original bet blackjack
+    - If dealer also has a natural, it is a tie and bet is returned to player
+
+Each round:
+- Player places bet (between 1 and current amount they have)
+- 2 cards are dealt to player and deale
+    - Player's cards are dealt face up
+    - Dealer's cards are dealt one face up, other face down
+- Player decides hit or stay
+    - If they hit, they are dealth another cards
+    - Can keep hitting until value exceed 21
+    - If stay, their turn is over and value of hand is locked
+- Once player turn is over, dealer flips their face down card and hit or stay according to rules:
+    - If hand of 17 or more, must stay
+    - If hand of 16 or less, must hit
+    - Must continue to hit until hand has value of 17 or greater
+    - If hand exceeds 21, they lose
+- Once dealer stays or busts, round is over and winner is higher hand
+    - If player wins, their bet is doubled and returned
+    - If dealer wins, they take players bet
+    - If tie, original bet is returned to player
+
+Specifications for script:
+- Players starts with $500
+- Min bet is $1
+- Before bet, ask player if they would like to play a hand
+    - If no, game ends and tell player how much money is left
+- If player has $0, game ends
+- Before each hang, cards should be returned to deck and shuffled
+- One deck of 52 cards with 4 suits and 13 cards in each suits
+    - 2-9, K, Q, J, T, a
+
+
+Example:
+
+Welcome to Blackjack!
+
+You are starting with $500. Would you like to play a hand? yes
+Place your bet: -5
+The minimum bet is $1.
+Place your bet: 2.50
+You are dealt: 2♦, A♥
+The dealer is dealt: 7♦, Unknown
+Would you like to hit or stay? nothing
+That is not a valid option. 
+Would you like to hit or stay? hit
+You are dealt: K♠
+You now have: 2♦, A♥, K♠
+Would you like to hit or stay? hit
+You are dealt: Q♣
+You now have: 2♦, A♥, K♠, Q♣
+Your hand value is over 21 and you lose $2.50 :(
+
+You are starting with $497.50. Would you like to play a hand? yes
+Place your bet: 100
+You are dealt: K♦, A♥
+The dealer is dealt: J♦, Unknown
+The dealer has: J♦, T♥
+Blackjack! You win $150 :)
+
+You are starting with $647.50. Would you like to play a hand? yes
+Place your bet: 2500
+You do not have sufficient funds.
+Place your bet: 647.50
+You are dealt: 2♦, 4♥
+The dealer is dealt: A♠, Unknown
+Would you like to hit or stay? hit
+You are dealt: Q♦
+You now have: 2♦, 4♥, Q♦
+Would you like to hit or stay? stay
+The dealer has: A♠, 3♥
+The dealer hits and is dealt: J♣
+The dealer has: A♠, 3♥, J♣
+The dealer busts, you win $647.50 :)
+
+You are starting with $1295. Would you like to play a hand? yes
+Place your bet: 295
+You are dealt: T♦, T♥
+The dealer is dealt: 7♠, Unknown
+Would you like to hit or stay? stay
+The dealer has: 7♠, 3♥
+The dealer hits and is dealt: A♠
+The dealer has: 7♠, 3♥, A♠
+The dealer stays.
+The dealer wins, you lose $295 :(
+
+You are starting with $1000. Would you like to play a hand? yes
+Place your bet: 1000
+You are dealt: Q♦, K♥
+The dealer is dealt: 9♠, Unknown
+Would you like to hit or stay? stay
+The dealer has: 9♠, A♥
+The dealer stays.
+You tie. Your bet has been returned.
+
+You are starting with $1000. Would you like to play a hand? yes
+Place your bet: 1000
+You are dealt: 4♠, 7♣
+The dealer is dealt: 2♥, Unknown
+Would you like to hit or stay? hit
+You are dealt: 9♦
+You now have: 4♠, 7♣, 9♦
+Would you like to hit or stay? stay
+The dealer has: 2♥, 6♥
+The dealer hits and is dealt: A♠
+The dealer has: 2♥, 6♥, A♠
+The dealer stays.
+You win $1000!
+
+You are starting with $2000. Would you like to play a hand? yes
+Place your bet: 2000
+You are dealt: 3♦, 5♥
+The dealer is dealt: 8♠, Unknown
+Would you like to hit or stay? stay
+The dealer has: 8♠, 9♥
+The dealer stays.
+The dealer wins, you lose $2000 :(
+
+You've ran out of money. Please restart this program to try again. Goodbye.
+
